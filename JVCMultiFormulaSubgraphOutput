@@ -1,0 +1,186 @@
+#include "sierrachart.h"
+SCDLLName("JVC Multi Formula Subgraph Output")
+
+/*==============================================================================
+	This study outputs the result of up to 16 formulas to subgraphs
+	Inspired by @gcUserStudies
+------------------------------------------------------------------------------*/
+SCSFExport scsf_MultiFormulaSubgraphOutput(SCStudyInterfaceRef sc)
+{
+	if (sc.SetDefaults)
+	{
+				
+		sc.GraphName = "Multi Formula Subgraph Output";
+
+		sc.GraphRegion = 2;
+		sc.AutoLoop = 0; // auto looping on or off
+
+		sc.Input[0].Name = "Calculate historical bars? (Will add some latency)";
+		sc.Input[0].SetDescription("Should this study process for every bar in the chart?");
+		sc.Input[0].SetYesNo(0);
+
+		sc.Input[1].Name = "Formula 1";
+		sc.Input[1].SetDescription("Spreadsheet Formula");
+		sc.Input[1].SetString("");
+
+		sc.Subgraph[1].Name = "Formula 1";
+		sc.Subgraph[1].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[1].DrawZeros = true;
+
+		sc.Input[2].Name = "Formula 2";
+		sc.Input[2].SetDescription("Spreadsheet Formula");
+		sc.Input[2].SetString("");
+
+		sc.Subgraph[2].Name = "Formula 2";
+		sc.Subgraph[2].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[2].DrawZeros = true;
+
+		sc.Input[3].Name = "Formula 3";
+		sc.Input[3].SetDescription("Spreadsheet Formula");
+		sc.Input[3].SetString("");
+
+		sc.Subgraph[3].Name = "Formula 3";
+		sc.Subgraph[3].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[3].DrawZeros = true;
+
+		sc.Input[4].Name = "Formula 4";
+		sc.Input[4].SetDescription("Spreadsheet Formula");
+		sc.Input[4].SetString("");
+
+		sc.Subgraph[4].Name = "Formula 4";
+		sc.Subgraph[4].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[4].DrawZeros = true;
+
+		sc.Input[5].Name = "Formula 5";
+		sc.Input[5].SetDescription("Spreadsheet Formula");
+		sc.Input[5].SetString("");
+
+		sc.Subgraph[5].Name = "Formula 5";
+		sc.Subgraph[5].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[5].DrawZeros = true;
+
+		sc.Input[6].Name = "Formula 6";
+		sc.Input[6].SetDescription("SpreadsheetFormula");
+		sc.Input[6].SetString("");
+
+		sc.Subgraph[6].Name = "Formula 6";
+		sc.Subgraph[6].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[6].DrawZeros = true;
+
+		sc.Input[7].Name = "Formula 7";
+		sc.Input[7].SetDescription("Spreadsheet Formula");
+		sc.Input[7].SetString("");
+
+		sc.Subgraph[7].Name = "Formula 7";
+		sc.Subgraph[7].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[7].DrawZeros = true;
+
+		sc.Input[8].Name = "Formula 8";
+		sc.Input[8].SetDescription("Spreadsheet Formula");
+		sc.Input[8].SetString("");
+
+		sc.Subgraph[8].Name = "Formula 8";
+		sc.Subgraph[8].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[8].DrawZeros = true;
+
+		sc.Input[9].Name = "Formula 9";
+		sc.Input[9].SetDescription("Spreadsheet Formula");
+		sc.Input[9].SetString("");
+
+		sc.Subgraph[9].Name = "Formula 9";
+		sc.Subgraph[9].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[9].DrawZeros = true;
+
+		sc.Input[10].Name = "Formula 10";
+		sc.Input[10].SetDescription("Spreadsheet Formula");
+		sc.Input[10].SetString("");
+
+		sc.Subgraph[10].Name = "Formula 10";
+		sc.Subgraph[10].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[10].DrawZeros = true;
+
+		sc.Input[11].Name = "Formula 11";
+		sc.Input[11].SetDescription("Spreadsheet Formula");
+		sc.Input[11].SetString("");
+
+		sc.Subgraph[11].Name = "Formula 11";
+		sc.Subgraph[11].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[11].DrawZeros = true;
+
+		sc.Input[12].Name = "Formula 12";
+		sc.Input[12].SetDescription("Spreadsheet Formula");
+		sc.Input[12].SetString("");
+
+		sc.Subgraph[12].Name = "Formula 12";
+		sc.Subgraph[12].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[12].DrawZeros = true;
+
+		sc.Input[13].Name = "Formula 13";
+		sc.Input[13].SetDescription("Spreadsheet Formula");
+		sc.Input[13].SetString("");
+
+		sc.Subgraph[13].Name = "Formula 13";
+		sc.Subgraph[13].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[13].DrawZeros = true;
+
+		sc.Input[14].Name = "Formula 14";
+		sc.Input[14].SetDescription("Spreadsheet Formula");
+		sc.Input[14].SetString("");
+
+		sc.Subgraph[14].Name = "Formula 14";
+		sc.Subgraph[14].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[14].DrawZeros = true;
+
+		sc.Input[15].Name = "Formula 15";
+		sc.Input[15].SetDescription("Spreadsheet Formula");
+		sc.Input[15].SetString("");
+
+		sc.Subgraph[15].Name = "Formula 15";
+		sc.Subgraph[15].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[15].DrawZeros = true;
+
+		sc.Input[16].Name = "Formula 16";
+		sc.Input[16].SetDescription("Spreadsheet Formula");
+		sc.Input[16].SetString("");
+
+		sc.Subgraph[16].Name = "Formula 16";
+		sc.Subgraph[16].DrawStyle = DRAWSTYLE_SUBGRAPH_NAME_AND_VALUE_LABELS_ONLY;
+		sc.Subgraph[16].DrawZeros = true;
+		
+		sc.Input[17].Name = "DISABLE STUDY";
+		sc.Input[17].SetDescription("Enable/Disable study");
+		sc.Input[17].SetYesNo(0);
+		
+		return;
+	}
+	
+	if(sc.Input[17].GetYesNo() == 1)
+		return; // If the study is disabled, exit without doing anything.
+
+	bool ParseAndSetFormula = 1; // Set formulas to evaluate every time
+
+	for(int InputIndex = 1; InputIndex <= 16; InputIndex++) // Loop through each input
+	{
+		if(sc.Input[InputIndex].GetString() == "")
+			return; // If there is no formula for this input, skip it and continue
+		
+		const char* Formula = sc.Input[InputIndex].GetString(); // Grab the formula for the chosen input
+
+		if(sc.Input[0].GetYesNo() == 0) // Calculate only for current bar - near-zero latency
+		{
+			double FormulaOutput = sc.EvaluateGivenAlertConditionFormulaAsDouble(sc.Index, ParseAndSetFormula, Formula);
+			// Evaluate the formula
+
+			sc.Subgraph[InputIndex][sc.Index] = (float)FormulaOutput; // Return the formula result in a subgraph
+		}else
+		{
+			for (int BarIndex = sc.UpdateStartIndex; BarIndex < sc.ArraySize; BarIndex++) // loop to parse formula for each bar
+			{
+				double FormulaOutput = sc.EvaluateGivenAlertConditionFormulaAsDouble(BarIndex, ParseAndSetFormula, Formula);
+				// Evaluate the formula
+
+				sc.Subgraph[InputIndex][BarIndex] = (float)FormulaOutput; // Return the formula result in a subgraph
+			}
+		}
+	}
+}
