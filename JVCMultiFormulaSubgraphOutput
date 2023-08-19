@@ -5,15 +5,19 @@ SCDLLName("JVC Multi Formula Subgraph Output")
 	This study outputs the result of up to 16 formulas to subgraphs
 	Inspired by @gcUserStudies
 ------------------------------------------------------------------------------*/
+
 SCSFExport scsf_MultiFormulaSubgraphOutput(SCStudyInterfaceRef sc)
 {
 	if (sc.SetDefaults)
 	{
-				
-		sc.GraphName = "Multi Formula Subgraph Output";
+#		sc.FreeDLL = 0; // Enable when developing
+		
+		sc.GraphName = "JVC Multi-Formula Subgraph Output";
 
 		sc.GraphRegion = 2;
 		sc.AutoLoop = 0; // auto looping on or off
+
+		sc.CalculationPrecedence = LOW_PREC_LEVEL;
 
 		sc.Input[0].Name = "Calculate historical bars? (Will add some latency)";
 		sc.Input[0].SetDescription("Should this study process for every bar in the chart?");
@@ -172,7 +176,7 @@ SCSFExport scsf_MultiFormulaSubgraphOutput(SCStudyInterfaceRef sc)
 			// Evaluate the formula
 
 			sc.Subgraph[InputIndex][sc.Index] = (float)FormulaOutput; // Return the formula result in a subgraph
-		}else
+		}else //calculate for all historical bars
 		{
 			for (int BarIndex = sc.UpdateStartIndex; BarIndex < sc.ArraySize; BarIndex++) // loop to parse formula for each bar
 			{
