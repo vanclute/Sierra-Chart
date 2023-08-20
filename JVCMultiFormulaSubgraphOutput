@@ -10,7 +10,7 @@ SCSFExport scsf_MultiFormulaSubgraphOutput(SCStudyInterfaceRef sc)
 {
 	if (sc.SetDefaults)
 	{
-#		sc.FreeDLL = 0; // Enable when developing
+//		sc.FreeDLL = 0; // Enable when developing
 		
 		sc.GraphName = "JVC Multi-Formula Subgraph Output";
 
